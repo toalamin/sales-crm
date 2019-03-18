@@ -2,13 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class Customer extends Model
 {
-    use Notifiable;
-
     /**
      * The attributes that are not mass assignable.
      *
@@ -33,8 +30,8 @@ class User extends Authenticatable
         'active'            => 'bool',
     ];
 
-    public function customers(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->hasMany(Customer::class);
+        return $this->belongsTo(User::class);
     }
 }
