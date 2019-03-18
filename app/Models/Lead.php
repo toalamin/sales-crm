@@ -17,4 +17,9 @@ class Lead extends Model
     {
         return $this->belongsTo(Meeting::class);
     }
+
+    public function meetings(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(LeadMeeting::class);
+    }
 }
