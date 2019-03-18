@@ -24,7 +24,7 @@ class CreateLeadMeetingsTable extends Migration
             $table->text('note');
             $table->string('status', 32);
             $table->timestamps();
-            $table->foreign('meeting_id')->references('id')->on('meetings')->onDelete('cascade');
+            $table->foreign('lead_id')->references('id')->on('leads')->onDelete('cascade');
         });
     }
 
