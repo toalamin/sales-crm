@@ -27,6 +27,7 @@ class CreateCustomersTable extends Migration
             $table->string('google_id')->nullable();
             $table->string('type', 128)->nullable();
             $table->text('address')->nullable();
+            $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
