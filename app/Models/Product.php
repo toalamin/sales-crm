@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProductCategory extends Model
+class Product extends Model
 {
     /**
      * The attributes that aren't mass assignable.
@@ -13,8 +13,8 @@ class ProductCategory extends Model
      */
     protected $guarded = [''];
 
-    public function products(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->hasMany(Product::class);
+        return $this->belongsTo(ProductCategory::class);
     }
 }
