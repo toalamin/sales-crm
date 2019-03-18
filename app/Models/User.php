@@ -37,4 +37,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Customer::class);
     }
+
+    public function meetings(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Meeting::class);
+    }
 }

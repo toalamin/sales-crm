@@ -34,4 +34,9 @@ class Customer extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function meetings(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Meeting::class);
+    }
 }
