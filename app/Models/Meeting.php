@@ -22,4 +22,9 @@ class Meeting extends Model
     {
         return $this->belongsTo(Customer::class);
     }
+
+    public function lead(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Lead::class);
+    }
 }
