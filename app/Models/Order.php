@@ -17,4 +17,9 @@ class Order extends Model
     {
         return $this->belongsTo(Lead::class);
     }
+
+    public function products(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(OrderProduct::class);
+    }
 }
