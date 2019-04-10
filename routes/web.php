@@ -11,9 +11,14 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('login');
-Route::post('/', 'HomeController@authenticate');
+Route::group(['middleware' => 'guest'], function () {
+    Route::get('/', 'HomeController@index')->name('login');
+    Route::post('/', 'HomeController@authenticate');
 
-Route::get('/forgot', 'HomeController@forgot')->name('forgot');
+    Route::get('/forgot', 'HomeController@forgot')->name('forgot');
+});
 
-Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/logout', 'HomeController@logout')->name('logout');
+    Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+});

@@ -40,4 +40,13 @@ class HomeController extends Controller
     {
         return view('backend.dashboard');
     }
+
+    public function logout()
+    {
+        auth()->logout();
+
+        setSuccessMessage('You are logged out.');
+
+        return redirect()->route('login');
+    }
 }
