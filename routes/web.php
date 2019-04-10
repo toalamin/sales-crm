@@ -11,5 +11,9 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
-Route::get('/dashboard', 'HomeController@dashboard');
+Route::get('/', 'HomeController@index')->name('login');
+Route::post('/', 'HomeController@authenticate');
+
+Route::get('/forgot', 'HomeController@forgot')->name('forgot');
+
+Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
