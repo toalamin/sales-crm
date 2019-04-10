@@ -33,6 +33,13 @@ class User extends Authenticatable
         'active'            => 'bool',
     ];
 
+    public function setPasswordAttribute($password)
+    {
+        if (!empty($password)) {
+            $this->attributes['password'] = bcrypt($password);
+        }
+    }
+
     public function customers(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Customer::class);

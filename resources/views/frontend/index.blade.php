@@ -14,15 +14,21 @@
 
                     <div class="row no-gutters justify-content-center">
                         <div class="col-sm-8 col-xl-6">
+
+                            @include('backend.partials._message')
+
                             <form class="js-validation-signin" action="{{ route('login') }}" method="POST">
+                                @csrf
                                 <div class="py-3">
                                     <div class="form-group">
-                                        <input type="email" class="form-control form-control-lg form-control-alt"
+                                        <input type="email"
+                                               class="form-control form-control-lg form-control-alt"
                                                id="email" name="email" placeholder="Email">
                                     </div>
 
                                     <div class="form-group">
-                                        <input type="password" class="form-control form-control-lg form-control-alt"
+                                        <input type="password"
+                                               class="form-control form-control-lg form-control-alt"
                                                id="password" name="password" placeholder="Password">
                                     </div>
                                 </div>
@@ -33,8 +39,10 @@
                                     </button>
 
                                     <p class="mt-3 mb-0 d-lg-flex justify-content-lg-between">
-                                        <a class="btn btn-sm btn-light d-block d-lg-inline-block mb-1" href="{{ route('forgot') }}">
-                                            <i class="fa fa-exclamation-triangle text-muted mr-1"></i> Forgot password
+                                        <a class="btn btn-sm btn-light d-block d-lg-inline-block mb-1"
+                                           href="{{ route('forgot') }}">
+                                            <i class="fa fa-exclamation-triangle text-muted mr-1"></i> Forgot
+                                            password
                                         </a>
                                     </p>
                                 </div>
