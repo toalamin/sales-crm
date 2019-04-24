@@ -20,6 +20,15 @@
                     <span class="nav-main-link-name">Dashboard</span>
                 </a>
             </li>
+
+            @if(session('role') === 'admin')
+                <li class="nav-main-item">
+                    <a class="nav-main-link" href="{{ route(session('role').'.customers.index') }}">
+                        <i class="nav-main-link-icon si si-cursor"></i>
+                        <span class="nav-main-link-name">Customers</span>
+                    </a>
+                </li>
+            @endif
         </ul>
     </div>
     <!-- END Side Navigation -->

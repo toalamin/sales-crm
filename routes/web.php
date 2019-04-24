@@ -36,4 +36,8 @@ Route::group(['middleware' => 'auth:customer', 'prefix' => 'customer'], function
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/logout', 'AuthController@logout')->name('admin.logout');
     Route::get('/dashboard', 'HomeController@dashboard')->name('admin.dashboard');
+
+    Route::resource('/customers', 'CustomersController', [
+        'as' => 'admin',
+    ]);
 });
