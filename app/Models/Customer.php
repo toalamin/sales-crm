@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Customer extends Model
+class Customer extends Authenticatable
 {
     /**
      * The attributes that are not mass assignable.
@@ -38,5 +38,12 @@ class Customer extends Model
     public function meetings(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Meeting::class);
+    }
+
+    public function setPasswordAttribute($password)
+    {
+        if (!empty($password)) {
+            $this->attributes['password'] = bcrypt($password);
+        }
     }
 }

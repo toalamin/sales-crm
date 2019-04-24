@@ -1,12 +1,13 @@
 @extends('layouts.frontend')
 
 @section('content')
+
     <div class="bg-image">
         <div class="row no-gutters bg-primary-op">
             <div class="hero-static col-md-6 d-flex align-items-center bg-white">
                 <div class="p-3 w-100">
                     <div class="mb-3 text-center">
-                        <a class="link-fx font-w700 font-size-h1" href="{{ route('login') }}">
+                        <a class="link-fx font-w700 font-size-h1" href="{{ route($role.'.login') }}">
                             Sales CRM
                         </a>
                         <p class="text-uppercase font-w700 font-size-sm text-muted">Sign In</p>
@@ -17,7 +18,7 @@
 
                             @include('backend.partials._message')
 
-                            <form class="js-validation-signin" action="{{ route('login') }}" method="POST">
+                            <form class="js-validation-signin" action="{{ route($role.'.login') }}" method="POST">
                                 @csrf
                                 <div class="py-3">
                                     <div class="form-group">
@@ -40,7 +41,7 @@
 
                                     <p class="mt-3 mb-0 d-lg-flex justify-content-lg-between">
                                         <a class="btn btn-sm btn-light d-block d-lg-inline-block mb-1"
-                                           href="{{ route('forgot') }}">
+                                           href="{{ route($role .'.forgot') }}">
                                             <i class="fa fa-exclamation-triangle text-muted mr-1"></i> Forgot
                                             password
                                         </a>

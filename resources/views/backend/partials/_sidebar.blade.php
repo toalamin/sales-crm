@@ -3,7 +3,7 @@
     <div class="bg-header-dark">
         <div class="content-header bg-white-10">
             <!-- Logo -->
-            <a class="link-fx text-white text-center" href="/">
+            <a href="{{ route(session('role').'.dashboard') }}" class="link-fx text-white text-center">
                 Sales CRM
             </a>
             <!-- END Logo -->
@@ -15,11 +15,9 @@
     <div class="content-side content-side-full">
         <ul class="nav-main">
             <li class="nav-main-item">
-                <a class="nav-main-link{{ request()->is('dashboard') ? ' active' : '' }}"
-                   href="{{ url('dashboard') }}">
+                <a class="nav-main-link" href="{{ route(session('role').'.dashboard') }}">
                     <i class="nav-main-link-icon si si-cursor"></i>
                     <span class="nav-main-link-name">Dashboard</span>
-                    <span class="nav-main-link-badge badge badge-pill badge-success">5</span>
                 </a>
             </li>
         </ul>

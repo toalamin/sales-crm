@@ -17,8 +17,10 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        $guard = $guard ?? 'admin';
+
         if (Auth::guard($guard)->check()) {
-            return redirect()->route('dashboard');
+            return redirect()->route($guard.'.dashboard');
         }
 
         return $next($request);

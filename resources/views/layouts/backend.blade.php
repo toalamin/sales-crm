@@ -23,7 +23,6 @@
 </head>
 <body>
 <div id="page-container" class="sidebar-o side-scroll page-header-fixed page-header-dark main-content-narrow">
-
     @include('backend.partials._sidebar')
 
     @include('backend.partials._header')

@@ -26,13 +26,13 @@
 
                 <div class="dropdown-menu dropdown-menu-right p-0" aria-labelledby="page-header-user-dropdown">
                     <div class="p-2">
-                        <a class="dropdown-item" href="be_pages_generic_profile.html">
+                        <a class="dropdown-item" href="">
                             <i class="far fa-fw fa-user mr-1"></i> Profile
                         </a>
 
                         <div role="separator" class="dropdown-divider"></div>
 
-                        <a class="dropdown-item" href="{{ route('logout') }}">
+                        <a class="dropdown-item" href="{{ route(session('role').'.logout') }}">
                             <i class="far fa-fw fa-arrow-alt-circle-left mr-1"></i> Log Out
                         </a>
                     </div>
