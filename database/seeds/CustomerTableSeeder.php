@@ -15,8 +15,8 @@ class CustomerTableSeeder extends Seeder
         Customer::create([
             'user_id'           => 1,
             'first_name'        => 'Customer',
-            'last_name'         => 'User',
-            'email'             => 'customer@gmail.com',
+            'last_name'         => 'User 2',
+            'email'             => 'customer2@gmail.com',
             'password'          => '123456',
             'email_verified_at' => now(),
         ]);

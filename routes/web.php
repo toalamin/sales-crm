@@ -40,4 +40,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/customers', 'CustomersController', [
         'as' => 'admin',
     ]);
+    Route::get('/api/customers', 'CustomersController@showCustomersJson');
 });
