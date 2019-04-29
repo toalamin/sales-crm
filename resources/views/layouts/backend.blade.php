@@ -16,9 +16,9 @@
     <link rel="stylesheet" id="css-main" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,600,700">
     <link rel="stylesheet" id="css-theme" href="{{ mix('css/dashmix.css') }}">
 
-@yield('css_after')
+    @yield('css_after')
 
-<!-- Scripts -->
+    <!-- Scripts -->
     <script>window.Laravel = {!! json_encode(['csrfToken' => csrf_token(),]) !!};</script>
 </head>
 <body>
