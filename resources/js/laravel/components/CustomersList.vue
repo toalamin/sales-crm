@@ -1,6 +1,13 @@
 <template>
     <div class="table-responsive">
         <h2>{{ title }}</h2>
+
+        <div>
+            <button @click.prevent="showCreateForm()" type="button" class="btn btn-sm btn-primary js-tooltip-enabled" data-toggle="tooltip" title="" data-original-title="Create">
+                Create Customer
+            </button>
+        </div>
+
         <table class="table table-bordered table-striped table-vcenter">
             <thead>
             <tr>
@@ -37,7 +44,7 @@
 
         <hr/>
 
-        <div class="col-md-6 col-offset-md-6" v-if="editForm">
+        <div class="col-md-6 col-offset-md-6" v-if="customerForm">
             <div class="form-group">
                 <label>First Name</label>
                 <input type="text" class="form-control" v-model="first_name">
@@ -53,7 +60,10 @@
                 <input type="text" class="form-control" v-model="email">
             </div>
 
-            <button @click.prevent="updateCustomer()" class="btn btn-info">Update</button>
+            <button @click.prevent="updateCustomer()" class="btn btn-info" v-if="showUpdate">Update</button>
+            <button @click.prevent="createCustomer()" class="btn btn-info" v-if="showCreate">Create</button>
+
+            <button @click.prevent="hideForm()" class="btn btn-warning">Hide</button>
         </div>
     </div>
 </template>
@@ -67,7 +77,9 @@
                 first_name: '',
                 last_name: '',
                 email: '',
-                editForm: false,
+                customerForm: false,
+                showCreate: false,
+                showUpdate: false,
                 id: 0
             }
         },
@@ -94,8 +106,16 @@
                         console.log(error);
                     })
             },
+            showCreateForm() {
+                this.resetForm();
+                this.customerForm = true;
+                this.showCreate = true;
+                this.showUpdate = false;
+            },
             showEditForm(id) {
-                this.editForm = true;
+                this.customerForm = true;
+                this.showCreate = false;
+                this.showUpdate = true;
                 this.id = id;
 
                 axios.get('/customers/' + id)
@@ -108,6 +128,25 @@
                         console.log(error);
                     })
             },
+            hideForm() {
+                this.customerForm = false;
+            },
+            createCustomer() {
+                axios.post('/customers', {
+                    first_name: this.first_name,
+                    last_name: this.last_name,
+                    email: this.email,
+                })
+                    .then((response) => {
+                        alert(response.data.message);
+                        this.customerForm = false;
+                        this.resetForm();
+                        this.showCustomers();
+                    })
+                    .catch((error) => {
+                        console.log(error.response.data.message);
+                    })
+            },
             updateCustomer() {
                 axios.put('/customers/' + this.id, {
                     first_name: this.first_name,
@@ -116,12 +155,18 @@
                 })
                     .then((response) => {
                         alert(response.data.message);
-                        this.editForm = false;
+                        this.resetForm();
+                        this.customerForm = false;
                         this.showCustomers();
                     })
                     .catch((error) => {
                         console.log(error);
                     })
+            },
+            resetForm() {
+                this.first_name = '';
+                this.last_name = '';
+                this.email = '';
             }
         }
     }

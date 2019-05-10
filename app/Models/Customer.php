@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class Customer extends Authenticatable
 {
+    use Notifiable;
+
     /**
      * The attributes that are not mass assignable.
      *
@@ -40,7 +43,7 @@ class Customer extends Authenticatable
         return $this->hasMany(Meeting::class);
     }
 
-    public function setPasswordAttribute($password)
+    public function setPasswordAttribute($password): void
     {
         if (!empty($password)) {
             $this->attributes['password'] = bcrypt($password);

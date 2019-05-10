@@ -19,4 +19,5 @@ mix
     /* Options */
     .options({
         processCssUrls: false
-    });
+    })
+    .version();

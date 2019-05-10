@@ -1,13 +1,13 @@
 {
-    "/js/dashmix.app.js": "/js/dashmix.app.js",
-    "/js/laravel.app.js": "/js/laravel.app.js",
-    "/css/dashmix.css": "/css/dashmix.css",
-    "/css/themes/xeco.css": "/css/themes/xeco.css",
-    "/css/themes/xinspire.css": "/css/themes/xinspire.css",
-    "/css/themes/xmodern.css": "/css/themes/xmodern.css",
-    "/css/themes/xsmooth.css": "/css/themes/xsmooth.css",
-    "/css/themes/xwork.css": "/css/themes/xwork.css",
-    "/css/themes/xdream.css": "/css/themes/xdream.css",
-    "/css/themes/xpro.css": "/css/themes/xpro.css",
-    "/css/themes/xplay.css": "/css/themes/xplay.css"
+    "/js/dashmix.app.js": "/js/dashmix.app.js?id=f37120a6685c7cfc263e",
+    "/js/laravel.app.js": "/js/laravel.app.js?id=96b5e536c2b2d67185bc",
+    "/css/dashmix.css": "/css/dashmix.css?id=dc6c0e9df7a519ee724e",
+    "/css/themes/xeco.css": "/css/themes/xeco.css?id=d0299df5955bf1a1ec9a",
+    "/css/themes/xinspire.css": "/css/themes/xinspire.css?id=bbddc3a5f9bfd621bb28",
+    "/css/themes/xmodern.css": "/css/themes/xmodern.css?id=b76c47d23ac8f768937e",
+    "/css/themes/xsmooth.css": "/css/themes/xsmooth.css?id=8dac9624866d025c03ee",
+    "/css/themes/xwork.css": "/css/themes/xwork.css?id=ffed18c727e7e8d7b393",
+    "/css/themes/xdream.css": "/css/themes/xdream.css?id=77c2864a0838f012c244",
+    "/css/themes/xpro.css": "/css/themes/xpro.css?id=584af0e7cc34f17d37a5",
+    "/css/themes/xplay.css": "/css/themes/xplay.css?id=1a43dc2553e3ac4b6ba0"
 }
